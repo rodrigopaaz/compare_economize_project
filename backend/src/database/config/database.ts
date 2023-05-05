@@ -1,17 +1,29 @@
-import 'dotenv/config';
-import { Options } from 'sequelize';
+import { config as loadEnv } from 'dotenv';
+import { Dialect } from 'sequelize';
 
-const config: Options = {
-  username: process.env.DB_USER || 'root',
-  password: process.env.DB_PASS || '123456',
-  database: 'TRYBE_FUTEBOL_CLUBE',
-  host: process.env.DB_HOST || 'localhost',
-  port: Number(process.env.DB_PORT) || 3002,
-  dialect: 'mysql',
-  dialectOptions: {
-    timezone: 'Z',
-  },
-  logging: false,
+loadEnv();
+
+interface SequelizeConfig {
+  username: string;
+  password: string;
+  host: string;
+  port: number;
+  dialect: Dialect;
+  dialectModule: any;
 }
 
-export default config
+const config: SequelizeConfig = {
+  username: process.env.MYSQL_USER || 'root',
+  password: process.env.MYSQL_PASSWORD || 'password',
+  host: process.env.MYSQL_HOST || 'localhost',
+  port: Number(process.env.MYSQL_PORT) || 3306,
+  dialect: 'mysql',
+  dialectModule: require('mysql2'),
+};
+console.log(config)
+export default {
+  development: {
+    ...config,
+    database: process.env.MYSQL_DATABASE || 'lexart_database',
+  },
+};

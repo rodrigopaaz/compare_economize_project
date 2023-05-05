@@ -1,4 +1,5 @@
 export default interface IProduct{
+    categoryId:string
     siteId: string
     searchId: string
     title:string
