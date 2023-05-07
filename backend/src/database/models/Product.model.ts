@@ -46,7 +46,8 @@ Product.init(
     sequelize: db,
     modelName: 'products',
     timestamps: false,
-  },)
+  },
+  )
   Product.belongsTo(Site, { foreignKey: 'siteId', as: 'siteName' });
   Product.belongsTo(Search, { foreignKey: 'searchId', as: 'search' });
   Product.belongsTo(Category, {

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const _1 = require(".");
-const Product_model_1 = require("./Product.model");
 class Category extends sequelize_1.Model {
 }
 exports.default = Category;
@@ -23,8 +22,8 @@ Category.init({
     modelName: 'categories',
     timestamps: false,
 });
-Category.hasMany(Product_model_1.default, {
-    foreignKey: 'categoryId',
-    as: 'categories',
-});
+/*  Category.hasMany(Product, {
+   foreignKey: 'categoryId',
+   as: 'categories',
+ }); */
 //# sourceMappingURL=Category.model.js.map

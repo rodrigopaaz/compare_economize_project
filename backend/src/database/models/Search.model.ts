@@ -28,6 +28,6 @@ Search.init(
 
 );
 
-Search.hasMany(Product, {
+/* Search.hasMany(Product, {
     foreignKey: 'searchId', as: 'search'
-  });
+  }); */

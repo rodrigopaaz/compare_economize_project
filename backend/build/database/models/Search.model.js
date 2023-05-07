@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const _1 = require(".");
-const Product_model_1 = require("./Product.model");
 class Search extends sequelize_1.Model {
 }
 exports.default = Search;
@@ -23,7 +22,7 @@ Search.init({
     modelName: 'search',
     timestamps: false,
 });
-Search.hasMany(Product_model_1.default, {
+/* Search.hasMany(Product, {
     foreignKey: 'searchId', as: 'search'
-});
+  }); */
 //# sourceMappingURL=Search.model.js.map

@@ -2,7 +2,6 @@
 Object.defineProperty(exports, "__esModule", { value: true });
 const sequelize_1 = require("sequelize");
 const _1 = require(".");
-const Product_model_1 = require("./Product.model");
 class Site extends sequelize_1.Model {
 }
 exports.default = Site;
@@ -23,7 +22,7 @@ Site.init({
     modelName: 'sites',
     timestamps: false,
 });
-Site.hasMany(Product_model_1.default, {
+/* Site.hasMany(Product, {
     foreignKey: 'siteId', as: 'sites'
-});
+  }); */
 //# sourceMappingURL=Site.model.js.map

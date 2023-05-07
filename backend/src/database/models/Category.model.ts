@@ -28,7 +28,7 @@ Category.init(
 
 );
 
-  Category.hasMany(Product, {
+ /*  Category.hasMany(Product, {
     foreignKey: 'categoryId',
     as: 'categories',
-  });
+  }); */

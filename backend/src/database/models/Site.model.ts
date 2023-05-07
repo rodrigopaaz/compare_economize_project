@@ -28,6 +28,6 @@ Site.init(
 
 );
 
-Site.hasMany(Product, {
+/* Site.hasMany(Product, {
     foreignKey: 'siteId', as: 'sites'
-  });
+  }); */
